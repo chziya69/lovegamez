@@ -1,34 +1,35 @@
 /* Основные стили страницы */
 body {
-    font-family: 'Lobster', cursive;
-    background: linear-gradient(135deg, #f6d0f0, #ffd4d4);
+    font-family: 'Lobster', cursive; /* Применяем красивый шрифт */
+    background: linear-gradient(135deg, #f6d0f0, #ffd4d4); /* Нежный градиент */
     text-align: center;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     flex-direction: column;
     color: #3e2a47;
 }
 
 /* Заголовок */
 h1 {
-    font-size: 40px;
-    margin-bottom: 30px;
-    color: #ff69b4;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff69b4; /* Розовый цвет для заголовка */
 }
 
 /* Кнопки */
 .button {
     background-color: #ffb6c1;
     color: #3e2a47;
-    padding: 18px 40px;
-    font-size: 22px;
+    padding: 12px 30px;
+    font-size: 18px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.6);
 }
@@ -44,12 +45,13 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
+/* Стили для сердечек */
 .heart {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background-image: url('heart.png');
     background-size: cover;
     background-position: center;
@@ -81,8 +83,9 @@ h1 {
 .modal-content {
     background-color: white;
     color: #3e2a47;
-    padding: 40px;
-    width: 60%;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
@@ -92,10 +95,10 @@ h1 {
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     box-shadow: 0px 5px 10px rgba(255, 105, 180, 0.7);
 }
 
@@ -106,88 +109,79 @@ h1 {
 
 /* Стиль для музыки */
 audio {
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
 }
 
-/* Адаптивные стили */
-@media (max-width: 600px) {
-    /* Общие стили */
+/* Мобильные стили */
+@media screen and (max-width: 768px) {
     body {
-        flex-direction: column;
         padding: 10px;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .button {
-        padding: 15px 30px;
-        font-size: 18px;
-    }
-
-    /* Контейнер для сердечек */
-    .heart-container {
-        gap: 15px;
+        padding: 12px 25px;
+        font-size: 16px;
     }
 
     .heart {
-        width: 90px;
-        height: 90px;
+        width: 60px;
+        height: 60px;
     }
 
-    /* Модальное окно */
     .modal-content {
-        width: 80%;
         padding: 20px;
+        width: 90%;
+        max-width: 400px;
     }
 
-    /* Стиль для календаря */
-    .calendar {
-        grid-template-columns: repeat(4, 1fr); /* 4 колонки для мобильных */
-        gap: 10px;
+    .modal button {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
-    /* Стиль для фотоальбома */
-    .album-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .album-item {
-        width: 100px;
-        height: 100px;
+    audio {
+        width: 100%;
     }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-    /* Для планшетов */
-    .calendar {
-        grid-template-columns: repeat(5, 1fr); /* 5 колонок для планшетов */
-        gap: 10px;
+/* Стили для маленьких экранов (например, телефоны) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 5px;
     }
 
-    /* Фотоальбом */
-    .album-item {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-@media (min-width: 901px) {
-    /* Для десктопов */
-    .calendar {
-        grid-template-columns: repeat(7, 1fr); /* 7 колонок для десктопов */
-        gap: 15px;
+    h1 {
+        font-size: 24px;
     }
 
-    /* Фотоальбом */
-    .album-item {
-        width: 150px;
-        height: 150px;
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .heart {
+        width: 50px;
+        height: 50px;
+    }
+
+    .modal-content {
+        padding: 15px;
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .modal button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    audio {
+        width: 100%;
     }
 }
