@@ -31,5 +31,169 @@ h1 {
     cursor: pointer;
     margin-top: 30px;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0px 5px 15px rg
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.6);
+}
 
+.button:hover {
+    background-color: #ff69b4;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(255, 105, 180, 0.8);
+}
+
+/* Контейнер для сердечек */
+.heart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.heart {
+    width: 120px;
+    height: 120px;
+    background-image: url('heart.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.6);
+}
+
+.heart:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(255, 105, 180, 0.8);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    color: #3e2a47;
+    padding: 40px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+.modal button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0px 5px 10px rgba(255, 105, 180, 0.7);
+}
+
+.modal button:hover {
+    background-color: #ff3385;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.9);
+}
+
+/* Стиль для музыки */
+audio {
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    /* Общие стили */
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    /* Контейнер для сердечек */
+    .heart-container {
+        gap: 15px;
+    }
+
+    .heart {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Модальное окно */
+    .modal-content {
+        width: 80%;
+        padding: 20px;
+    }
+
+    /* Стиль для календаря */
+    .calendar {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки для мобильных */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    /* Для планшетов */
+    .calendar {
+        grid-template-columns: repeat(5, 1fr); /* 5 колонок для планшетов */
+    }
+}
+
+@media (min-width: 901px) {
+    /* Для десктопов */
+    .calendar {
+        grid-template-columns: repeat(7, 1fr); /* 7 колонок для десктопов */
+    }
+}
+
+/* Пример для фотоальбома */
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.album-item {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.5);
+    transition: transform 0.3s;
+}
+
+.album-item:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .album-container {
+        gap: 5px;
+    }
+
+    .album-item {
+        width: 100px;
+        height: 100px;
+    }
+}
